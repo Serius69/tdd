@@ -60,29 +60,14 @@ public class TresRayaTest {
     @Test
 
     public void siPrimerTurnoEntoncesJuegaX() throws Exception{
-
 //1. Preparacion de la prueba
-
-
-
         System.out.println("==================================== "+tresEnRaya);
-
-
-
 //2. Logica de la prueba
 
-
-
 //3. Verificacion o Assert
-
         assertEquals('X',tresEnRaya.siguienteTurno());//Jugador X
-
     }
-
-
-
     @Test
-
     public void siPrimerTurnoXsiguienteCruz() throws Exception{
 
 //1. Preparacion de la prueba
