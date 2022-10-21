@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Ascensor {
 
     private char[] pisos =  {'0'
-                            ,'0'
-                            ,'0'
-                            ,'0'
-                            ,'0'
-                            ,'0'};
+            ,'0'
+            ,'0'
+            ,'0'
+            ,'0'
+            ,'0'};
 
     public String CrearPersona(int persona,int pisollegada) throws Exception{
         int pisosalida = 0;
@@ -18,7 +18,8 @@ public class Ascensor {
         verificarUnaSolaPersona(persona);
         verificarqueseaelpiso1(pisosalida,pisollegada);
         verificarquelospisosseandistintos(pisosalida,pisollegada);
-        verificarPiso(pisosalida);
+//
+        System.out.println("El piso salida es "+pisosalida+" el piso llegada es "+pisollegada);
 
         boolean verificar=subidaobajada(pisosalida,pisollegada);
         if(verificar){
@@ -28,9 +29,11 @@ public class Ascensor {
     }
     private boolean subidaobajada(int pisosalida, int pisollegada) throws Exception{
         //verificar que la persona sea una sola
+
+
+
         if(pisollegada>pisosalida){
             //ascensor sube
-            System.out.println("El piso salida es "+pisosalida+" el piso llegada es "+pisollegada);
             return true;
         }
         //ascensor baja
@@ -44,11 +47,13 @@ public class Ascensor {
     }
     private void verificarPiso(int piso) throws Exception {
         if (piso < 0 && piso > 7) {
+            System.out.println("El piso"+piso+"no existe");
             throw new Exception("El piso " + piso + " esta fuera del edificio");
         }
     }
     private void verificarquelospisosseandistintos(int salida, int llegada) throws Exception{
         //verificar que los pisos sean distintos
+        verificarPiso(salida);
         if(salida==llegada){
             System.out.println("El piso "+salida+" es igual al piso "+llegada);
             throw new Exception("Los pisos son iguales");

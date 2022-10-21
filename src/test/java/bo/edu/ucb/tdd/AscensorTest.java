@@ -33,15 +33,6 @@ public class AscensorTest {
         ascensor.CrearPersona(1,8);
     }
     @Test
-    public void sielpisoLlegadaesdistintoalpisoSalida() throws Exception{
-        //1. Preparacion de la prueba
-        System.out.println("==================================== "+ascensor);
-        //2. Logica de la prueba
-        String resultado = ascensor.CrearPersona(1,4);
-        //3. Verificacion o Assert
-        assertEquals("El ascensor sube",resultado);
-    }
-    @Test
     public void sielpisoSalidaesunolanzarException() throws Exception{
         //1. Preparacion de la prueba
         System.out.println("==================================== "+ascensor);
@@ -51,6 +42,16 @@ public class AscensorTest {
         exception.expect(Exception.class);
         ascensor.CrearPersona(1,3);
     }
+    @Test
+    public void sielpisoLlegadaesdistintoalpisoSalida() throws Exception{
+        //1. Preparacion de la prueba
+        System.out.println("==================================== "+ascensor);
+        //2. Logica de la prueba
+        String resultado = ascensor.CrearPersona(1,4);
+        //3. Verificacion o Assert
+        assertEquals("El ascensor sube",resultado);
+    }
+
 
 
 }
